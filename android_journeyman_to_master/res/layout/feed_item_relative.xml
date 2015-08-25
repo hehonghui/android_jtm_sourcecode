@@ -1,0 +1,34 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#f0f0f0"
+    android:padding="3dp" >
+
+    <ImageView
+        android:id="@+id/profile_img"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/smile" />
+
+    <TextView
+        android:id="@+id/name_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/profile_img"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:singleLine="true"
+        android:text="用户名"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/msg_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_img"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="3dp"
+        android:text="这里是文本信息"
+        android:textSize="13sp" />
+
+</RelativeLayout>

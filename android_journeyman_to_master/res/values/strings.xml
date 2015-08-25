@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">小工到专家</string>
+    <string name="leak">Leak</string>
+    <string name="action_settings">Settings</string>
+
+</resources>

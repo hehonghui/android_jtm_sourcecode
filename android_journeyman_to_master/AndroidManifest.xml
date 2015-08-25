@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.book.jtm"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="15" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".CustomApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/master"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".chap02.anim.AnimActivity" />
+        <activity android:name=".chap07.LeakActivity" />
+        <activity android:name="com.book.jtm.chap06.LayoutActivity" />
+        <activity android:name="com.book.jtm.chap06.StubLayoutActivity" />
+        <activity android:name="com.book.jtm.chap06.FeedsActivity" />
+
+        <!--  -->
+        <service
+            android:name="com.squareup.leakcanary.internal.HeapAnalyzerService"
+            android:enabled="false"
+            android:process=":leakcanary" />
+        <service
+            android:name="com.squareup.leakcanary.DisplayLeakService"
+            android:enabled="false" />
+
+        <meta-data
+            android:name="AA_DB_NAME"
+            android:value="database_aa.db" />
+        <meta-data
+            android:name="AA_DB_VERSION"
+            android:value="3" />
+    </application>
+
+</manifest>

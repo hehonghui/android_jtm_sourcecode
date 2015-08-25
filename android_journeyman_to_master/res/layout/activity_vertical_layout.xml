@@ -1,0 +1,33 @@
+<com.book.jtm.chap02.viewgroup.VerticalLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/root_layout"
+    android:background="#009900"
+    android:padding="5dp" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#aaaaaa"
+        android:gravity="center"
+        android:text="文本1"
+        android:textColor="#ff0000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#cccccc"
+        android:gravity="center"
+        android:text="文本2"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="#aa7755"
+        android:gravity="center"
+        android:text="文本3"
+        android:textSize="18sp" />
+
+</com.book.jtm.chap02.viewgroup.VerticalLayout>

@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <include
+        android:id="@+id/top_title"
+        layout="@layout/common_title" />
+
+    <TextView
+        android:id="@+id/profile_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="用户设置"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/msg_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="消息设置"
+        android:textSize="16sp" />
+
+</RelativeLayout>

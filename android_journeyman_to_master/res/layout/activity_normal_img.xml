@@ -1,0 +1,20 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:circle="http://schemas.android.com/apk/res/com.book.jtm"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="2dp" >
+
+    <!--
+         <com.book.jtm.chap02.SimpleImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        circle:src="@drawable/icon_400" />
+    -->
+
+    <com.book.jtm.chap02.SimpleImageViewV2
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        circle:src="@drawable/icon_400" />
+
+</LinearLayout>

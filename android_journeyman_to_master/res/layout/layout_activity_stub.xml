@@ -1,0 +1,25 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <include
+        android:id="@+id/top_title"
+        layout="@layout/common_title" />
+
+    <Button
+        android:id="@+id/show_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_title"
+        android:layout_marginTop="10dp"
+        android:text="显示图片GridView" />
+
+    <ViewStub
+        android:id="@+id/comment_stub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/show_btn"
+        android:layout="@layout/layout_image_gv" />
+
+</RelativeLayout>

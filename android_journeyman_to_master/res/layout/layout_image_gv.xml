@@ -1,0 +1,22 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#aaaaaa"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/image_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="这里是一个显示九宫格图片的GridView"
+        android:textSize="16sp" />
+
+    <GridView
+        android:id="@+id/image_gc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/image_desc"
+        android:numColumns="3" />
+
+</RelativeLayout>
