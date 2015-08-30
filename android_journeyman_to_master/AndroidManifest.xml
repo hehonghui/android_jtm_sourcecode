@@ -31,6 +31,7 @@
         <activity android:name="com.book.jtm.chap06.LayoutActivity" />
         <activity android:name="com.book.jtm.chap06.StubLayoutActivity" />
         <activity android:name="com.book.jtm.chap06.FeedsActivity" />
+        <activity android:name="com.book.jtm.chap06.trace.TraceActivity" />
 
         <!--  -->
         <service

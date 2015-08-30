@@ -26,13 +26,15 @@ package com.book.jtm.chap011.pushdownmethod;
 
 public class Test {
     public static void main(String[] args) {
-        Car audi = new Audi() ;
+        Car audi = new Audi();
         audi.closeDoor();
         audi.start();
-        audi.turn();
-        
-        Vehicle bike = new Bike() ;
-        bike.start();
-        bike.turn();
+        audi.speedup();
+
+        System.out.println("-------> 宝马车");
+        Car bmw = new BMW();
+        bmw.closeDoor();
+        bmw.start();
+        bmw.speedup();
     }
 }

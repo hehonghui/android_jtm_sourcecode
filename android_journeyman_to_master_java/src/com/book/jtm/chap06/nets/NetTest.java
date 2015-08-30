@@ -54,7 +54,7 @@ public class NetTest extends TestCase {
         assertNull(mResponse);
         ArgumentCaptor<RequestListener> captor = ArgumentCaptor.forClass(RequestListener.class);
         // 执行操作
-        netEngine.submit(mockRequest(Request.POST, "uid"), mListener);
+        netEngine.submit(createRequest(Request.POST, "uid"), mListener);
         verify(netEngine).submit(any(Request.class), captor.capture());
         // 回调
         captor.getValue().onResponse(new Response(200, "success"));
@@ -89,13 +89,13 @@ public class NetTest extends TestCase {
             }
         }).when(netEngine).submit(any(Request.class), any(RequestListener.class));
         // 执行操作
-        netEngine.submit(mockRequest(Request.POST, "uid"), mListener);
+        netEngine.submit(createRequest(Request.POST, "uid"), mListener);
 
         // 验证是否只执行了一次
         verify(netEngine).submit(any(Request.class), any(RequestListener.class));
     }
 
-    protected Request mockRequest(String md, String param) {
+    protected Request createRequest(String md, String param) {
         return new Request(md, param);
     }
 

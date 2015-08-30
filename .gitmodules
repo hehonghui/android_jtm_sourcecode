@@ -1,0 +1,3 @@
+[submodule "Android_jouneymantomaster_techfrontier"]
+	path = Android_jouneymantomaster_techfrontier
+	url = git@github.com:bboyfeiyu/jtm-techfrontier-app.git

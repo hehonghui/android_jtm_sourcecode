@@ -16,8 +16,8 @@ import com.activeandroid.query.Select;
 import com.activeandroid.query.Update;
 import com.book.jtm.chap03.SimpleAsyncTask;
 import com.book.jtm.chap06.StubLayoutActivity;
+import com.book.jtm.chap06.trace.TraceActivity;
 import com.book.jtm.chap5.DbCommand;
-import com.book.jtm.chap5.NoRetDbCommand;
 import com.book.jtm.chap5.SQLiteDbHelper;
 import com.book.jtm.chap5.Student;
 
@@ -68,7 +68,7 @@ public class MainActivity extends ActionBarActivity {
         // insertStudents();
 
         // queryStudents();
-        // startActivity(new Intent(MainActivity.this, FeedsActivity.class));
+        startActivity(new Intent(MainActivity.this, TraceActivity.class));
 
         // 插入数据
         // insertStudentsWithActive();
@@ -91,6 +91,7 @@ public class MainActivity extends ActionBarActivity {
                 }
             }
         }.execute();
+
     }
 
     public List<Student> queryAllStudents() {
