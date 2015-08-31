@@ -22,17 +22,30 @@
  * THE SOFTWARE.
  */
 
-package com.techfrontier.demo.test.presenter.mocks;
+package com.book.jtm.chap04.tcp;
 
-import com.techfrontier.demo.presenter.ArticleDetailPresenter;
+import java.io.Closeable;
+import java.io.IOException;
+import java.net.Socket;
 
-public class MockArticleDetailPresenter extends ArticleDetailPresenter {
-    
-    @Override
-    public void fetchContentFromServer(String postId, String title) {
-        System.out.println("invoke");
-        mView.onShowLoding();
-        mView.onFetchedArticleContent("fake-content");
-        mView.onHideLoding();
+public class IoUtils {
+    public static void closeQuitly(Closeable closeable) {
+        if (closeable != null) {
+            try {
+                closeable.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void closeSocket(Socket closeable) {
+        if (closeable != null) {
+            try {
+                closeable.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

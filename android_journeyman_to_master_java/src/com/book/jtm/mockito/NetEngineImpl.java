@@ -22,17 +22,21 @@
  * THE SOFTWARE.
  */
 
-package com.techfrontier.demo.test.presenter.mocks;
+package com.book.jtm.mockito;
 
-import com.techfrontier.demo.presenter.ArticleDetailPresenter;
+/**
+ * 网络引擎实现
+ */
+public class NetEngineImpl implements NetworkEngine {
 
-public class MockArticleDetailPresenter extends ArticleDetailPresenter {
-    
     @Override
-    public void fetchContentFromServer(String postId, String title) {
-        System.out.println("invoke");
-        mView.onShowLoding();
-        mView.onFetchedArticleContent("fake-content");
-        mView.onHideLoding();
+    public void submit(Request request, RequestListener listener) {
+        System.out.println("submit");
+        listener.onResponse(createResponse());
     }
+
+    private Response createResponse() {
+        return new Response(200, "success");
+    }
+
 }

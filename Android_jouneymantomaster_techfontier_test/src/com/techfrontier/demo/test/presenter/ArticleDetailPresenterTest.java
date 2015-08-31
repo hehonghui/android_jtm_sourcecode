@@ -63,9 +63,9 @@ public class ArticleDetailPresenterTest extends TestCase {
         doReturn("fake-content").when(mPresenter).loadArticleContentFromDB(anyString());
         
         // 调用加载文章内容
-        mPresenter.fetchArticleContent("888");
+        mPresenter.fetchArticleContent("888","title");
         // 如果有缓存,那么不会执行fetchContentFromServer从服务器下载数据
-        verify(mPresenter, never()).fetchContentFromServer(anyString());
+        verify(mPresenter, never()).fetchContentFromServer(anyString(), anyString());
 
         // 执行了一次fetchArticleContent
         verify(mDetailView, times(1)).onFetchedArticleContent(anyString());
@@ -79,9 +79,9 @@ public class ArticleDetailPresenterTest extends TestCase {
         doReturn(null).when(mPresenter).loadArticleContentFromDB(anyString());
         
         // 调用加载文章内容
-        mPresenter.fetchArticleContent("888");
+        mPresenter.fetchArticleContent("888", "title");
         // 如果没有缓存,那么就会执行fetchContentFromServer从服务器下载文章数据
-        verify(mPresenter).fetchContentFromServer(anyString());
+        verify(mPresenter).fetchContentFromServer(anyString(),anyString());
         
         // 执行了一次fetchArticleContent
         verify(mDetailView, times(1)).onFetchedArticleContent(anyString());

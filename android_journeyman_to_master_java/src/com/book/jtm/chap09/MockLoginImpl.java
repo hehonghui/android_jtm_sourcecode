@@ -22,17 +22,13 @@
  * THE SOFTWARE.
  */
 
-package com.techfrontier.demo.test.presenter.mocks;
+package com.book.jtm.chap09;
 
-import com.techfrontier.demo.presenter.ArticleDetailPresenter;
+public class MockLoginImpl implements Login {
 
-public class MockArticleDetailPresenter extends ArticleDetailPresenter {
-    
     @Override
-    public void fetchContentFromServer(String postId, String title) {
-        System.out.println("invoke");
-        mView.onShowLoding();
-        mView.onFetchedArticleContent("fake-content");
-        mView.onHideLoding();
+    public User login(String username, String pwd) {
+        return new User("123", username);
     }
+
 }

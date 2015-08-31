@@ -22,17 +22,17 @@
  * THE SOFTWARE.
  */
 
-package com.techfrontier.demo.test.presenter.mocks;
+package com.book.jtm.mockito;
 
-import com.techfrontier.demo.presenter.ArticleDetailPresenter;
+public class Request {
+    public static final String POST = "POST";
+    public static final String GET = "GET";
+    public String method;
+    public String paramName;
 
-public class MockArticleDetailPresenter extends ArticleDetailPresenter {
-    
-    @Override
-    public void fetchContentFromServer(String postId, String title) {
-        System.out.println("invoke");
-        mView.onShowLoding();
-        mView.onFetchedArticleContent("fake-content");
-        mView.onHideLoding();
+    public Request(String md, String param) {
+        method = md;
+        paramName = param;
     }
+
 }

@@ -22,17 +22,35 @@
  * THE SOFTWARE.
  */
 
-package com.techfrontier.demo.test.presenter.mocks;
+package com.book.jtm.chap09;
 
-import com.techfrontier.demo.presenter.ArticleDetailPresenter;
+import junit.framework.TestCase;
 
-public class MockArticleDetailPresenter extends ArticleDetailPresenter {
-    
-    @Override
-    public void fetchContentFromServer(String postId, String title) {
-        System.out.println("invoke");
-        mView.onShowLoding();
-        mView.onFetchedArticleContent("fake-content");
-        mView.onHideLoding();
+/**
+ * 加法测试类
+ */
+public class AdderTest extends TestCase {
+
+    Adder mAdder;
+
+    protected void setUp() throws Exception {
+        mAdder = new AdderImpl();
+        super.setUp();
+    }
+
+    protected void tearDown() throws Exception {
+        mAdder = null;
+        super.tearDown();
+    }
+
+    public void testAdd() {
+        assertEquals(0, mAdder.add(0, 0));
+        assertEquals(1, mAdder.add(1, 0));
+        assertEquals(2, mAdder.add(1, 1));
+        assertEquals(0, mAdder.add(1, -1));
+        assertEquals(Integer.MAX_VALUE + 1, mAdder.add(1, Integer.MAX_VALUE));
+        assertEquals(Integer.MIN_VALUE - 1, mAdder.add(-1, Integer.MIN_VALUE));
+        
+//        assertEquals(3, mAdder.add(1, 1));
     }
 }

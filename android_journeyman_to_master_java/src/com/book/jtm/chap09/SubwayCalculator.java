@@ -22,17 +22,28 @@
  * THE SOFTWARE.
  */
 
-package com.techfrontier.demo.test.presenter.mocks;
+package com.book.jtm.chap09;
 
-import com.techfrontier.demo.presenter.ArticleDetailPresenter;
-
-public class MockArticleDetailPresenter extends ArticleDetailPresenter {
-    
-    @Override
-    public void fetchContentFromServer(String postId, String title) {
-        System.out.println("invoke");
-        mView.onShowLoding();
-        mView.onFetchedArticleContent("fake-content");
-        mView.onHideLoding();
+public final class SubwayCalculator {
+    /**
+     * 地铁票按距离计算价格
+     * @param miles 公里
+     * @return 返回车票价格
+     */
+    public static int subwayPrice(int miles) {
+        if ( miles <= 0 ) {
+            return 0 ;
+        } else if (miles <= 6) {
+            return 3;
+        } else if (miles > 6 && miles <= 12) {
+            return 4;
+        } else if (miles > 12 && miles <= 22) {
+            return 5;
+        }
+        else if (miles > 22 && miles <= 32) {
+            return 6;
+        }
+        // 其他距离我们简化为7块
+        return 7;
     }
 }

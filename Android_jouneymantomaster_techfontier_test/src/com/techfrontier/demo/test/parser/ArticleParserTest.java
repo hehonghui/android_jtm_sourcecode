@@ -26,10 +26,9 @@ package com.techfrontier.demo.test.parser;
 
 import android.test.InstrumentationTestCase;
 
+import com.tech.frontier.demo.net.parser.ArticleParser;
 import com.techfrontier.demo.beans.Article;
 import com.techfrontier.demo.test.utils.AssetsUtil;
-
-import org.tech.frontier.net.parser.ArticleParser;
 
 import java.util.List;
 

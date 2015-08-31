@@ -24,11 +24,9 @@
 
 package com.book.jtm.chap02.anim;
 
-import android.animation.Animator;
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.graphics.drawable.AnimationDrawable;

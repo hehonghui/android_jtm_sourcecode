@@ -22,17 +22,37 @@
  * THE SOFTWARE.
  */
 
-package com.techfrontier.demo.test.presenter.mocks;
+package com.book.jtm.chap03.others;
 
-import com.techfrontier.demo.presenter.ArticleDetailPresenter;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Semaphore;
 
-public class MockArticleDetailPresenter extends ArticleDetailPresenter {
-    
-    @Override
-    public void fetchContentFromServer(String postId, String title) {
-        System.out.println("invoke");
-        mView.onShowLoding();
-        mView.onFetchedArticleContent("fake-content");
-        mView.onHideLoding();
+// http://www.cnblogs.com/whgw/archive/2011/09/29/2195555.html
+// http://www.cnblogs.com/skywang12345/p/3534050.html
+public class SemaphoreTest {
+
+    static int time = 0;
+
+    public static void main(String[] args) {
+        final ExecutorService executorService = Executors.newFixedThreadPool(3);
+        final Semaphore semaphore = new Semaphore(3);
+        for (int i = 0; i < 5; i++) {
+            executorService.submit(new Runnable() {
+
+                @Override
+                public void run() {
+                    try {
+                        semaphore.acquire();
+                        System.out.println(" 剩余许可 : "
+                                + semaphore.availablePermits());
+                        Thread.sleep(2000);
+                        semaphore.release();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+        }
     }
 }

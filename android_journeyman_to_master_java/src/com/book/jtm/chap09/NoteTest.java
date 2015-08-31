@@ -22,17 +22,20 @@
  * THE SOFTWARE.
  */
 
-package com.techfrontier.demo.test.presenter.mocks;
+package com.book.jtm.chap09;
 
-import com.techfrontier.demo.presenter.ArticleDetailPresenter;
+import junit.framework.TestCase;
 
-public class MockArticleDetailPresenter extends ArticleDetailPresenter {
-    
-    @Override
-    public void fetchContentFromServer(String postId, String title) {
-        System.out.println("invoke");
-        mView.onShowLoding();
-        mView.onFetchedArticleContent("fake-content");
-        mView.onHideLoding();
+import org.junit.Test;
+
+public class NoteTest extends TestCase {
+
+    @Test
+    public void testSaveNote() {
+        // 模拟一个Login实现
+        Login login = new MockLoginImpl() ;
+        NoteDAO noteDAO = new NoteDAO() ;
+        // 存储记事本到本地
+        noteDAO.saveNote(login.login("Mr.Simple", "my_pwd"), "这是我们的记事本内容");
     }
 }

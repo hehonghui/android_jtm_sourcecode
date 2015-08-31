@@ -26,10 +26,9 @@ package com.techfrontier.demo.test.db;
 
 import android.test.AndroidTestCase;
 
+import com.tech.frontier.demo.db.DatabaseHelper;
 import com.techfrontier.demo.beans.Article;
 import com.techfrontier.demo.beans.ArticleDetail;
-
-import org.tech.frontier.db.DatabaseHelper;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -22,17 +22,15 @@
  * THE SOFTWARE.
  */
 
-package com.techfrontier.demo.test.presenter.mocks;
+package com.book.jtm.chap09;
 
-import com.techfrontier.demo.presenter.ArticleDetailPresenter;
+public class User {
+    public String id; // 唯一的用户id
+    public String name;// 用户名
 
-public class MockArticleDetailPresenter extends ArticleDetailPresenter {
-    
-    @Override
-    public void fetchContentFromServer(String postId, String title) {
-        System.out.println("invoke");
-        mView.onShowLoding();
-        mView.onFetchedArticleContent("fake-content");
-        mView.onHideLoding();
+    public User(String aId, String aName) {
+        id = aId;
+        name = aName;
     }
+
 }

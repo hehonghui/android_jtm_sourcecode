@@ -22,17 +22,25 @@
  * THE SOFTWARE.
  */
 
-package com.techfrontier.demo.test.presenter.mocks;
+package com.book.jtm.chap09;
 
-import com.techfrontier.demo.presenter.ArticleDetailPresenter;
+import junit.framework.JUnit4TestAdapter;
+import junit.framework.Test;
+import junit.framework.TestSuite;
 
-public class MockArticleDetailPresenter extends ArticleDetailPresenter {
-    
-    @Override
-    public void fetchContentFromServer(String postId, String title) {
-        System.out.println("invoke");
-        mView.onShowLoding();
-        mView.onFetchedArticleContent("fake-content");
-        mView.onHideLoding();
+//@RunWith(Suite.class)
+//@Suite.SuiteClasses({
+//        AdderTest.class,
+//        DiverTest.class,
+//})
+
+public class MathTestSuite {
+
+    public static Test suite() {
+        TestSuite suite = new TestSuite("Test for package1");
+
+        suite.addTest(new JUnit4TestAdapter(AdderTest.class));
+        suite.addTest(new JUnit4TestAdapter(DiverTest.class));
+        return suite;
     }
 }
